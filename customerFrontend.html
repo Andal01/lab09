@@ -1,0 +1,121 @@
+<html>
+<head>
+	<style>
+
+	input {
+	    margin: .4rem;
+	}
+	.error{
+		display: none;
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<script>
+	      function cancelPurchase() {
+			document.getElementById("i1ship1").checked = false;
+			document.getElementById("i1ship2").checked = false;
+			document.getElementById("i1ship3").checked = false;
+			document.getElementById("i2ship1").checked = false;
+			document.getElementById("i2ship2").checked = false;
+			document.getElementById("i2ship3").checked = false;
+			document.getElementById("i3ship1").checked = false;
+			document.getElementById("i3ship2").checked = false;
+			document.getElementById("i3ship3").checked = false;
+		}
+		function check(){
+			email = document.getElementById("email").value;
+			pass = document.getElementById("pass").value;
+			if(email.length == 0 || pass.length == 0){
+				document.getElementById("error1").style.display = "block";
+			}else{
+				document.getElementById("error1").style.display = "none";
+			}
+			if(email.includes("@") && email.includes(".com")){
+				document.getElementById("error2").style.display = "none";
+			}else{
+				document.getElementById("error2").style.display = "block";
+			}
+		}
+	</script>
+	<label for="fname">Email:</label>
+	  <input type="text" id="email" name="email"><br><br>
+	  <label for="lname">Password:</label>
+	  <input type="text" id="pass" name="pass"><br><br>
+ 	<input type="submit" value="Check" onClick="check()">
+	<div class="error"  id="error1">
+		<p>Email or password cannot be empty!</p>
+	</div>
+	<div class="error"  id="error2">
+		<p>Email is invalid!</p>
+	</div>
+<form action="helloWorld.php" method="POST" class="ship">
+	
+  	<fieldset class="i1">
+	    <legend>A potato: $2.99</legend>
+	    
+	    <legend>Shipping Options</legend>
+
+	    <div>
+	      <input type="radio" id="i1ship1" name="i1">
+	      <label>7 day: Free</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i1ship2" name="i1">
+	      <label>Overnight: $50.00</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i1ship3" name="i1" >
+	      <label>3 Day: $5.00</label>
+	    </div>
+	</fieldset>
+	<fieldset class="i2">
+	    <legend>A  silver potato: $19.99</legend>
+	    
+	    <legend>Shipping Options</legend>
+
+	    <div>
+	      <input type="radio" id="i2ship1" name="i2">
+	      <label>7 day: Free</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i2ship2" name="i2">
+	      <label>Overnight: $50.00</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i2ship3" name="i2" >
+	      <label>3 Day: $5.00</label>
+	    </div>
+	</fieldset>
+	<fieldset class="i3">
+	    <legend>A golden potato: $99.99</legend>
+	    
+	    <legend>Shipping Options</legend>
+
+	    <div>
+	      <input type="radio" id="i3ship1" name="i3">
+	      <label>7 day: Free</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i3ship2" name="i3">
+	      <label>Overnight: $50.00</label>
+	    </div>
+
+	    <div>
+	      <input type="radio" id="i3ship3" name="i3" >
+	      <label>3 Day: $5.00</label>
+	    </div>
+	</fieldset>
+	<input type="submit" value="Submit">
+	<input type="reset" class="reset" value="Reset" onClick="cancelPurchase()">
+</form> 
+	
+</body>
+</html>
